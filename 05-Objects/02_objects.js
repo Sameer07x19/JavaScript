@@ -1,5 +1,6 @@
-// const tinderUser = new Object()
-const tinderUser = {}
+
+// const tinderUser = new Object()  // declared as a singleton object (as an instance)
+const tinderUser = {}  // normal object declaration
 
 tinderUser.id = "123abc"
 tinderUser.name = "Sammy"
@@ -11,8 +12,8 @@ const regularUser = {
     email: "some@gmail.com",
     fullname: {
         userfullname: {
-            firstname: "hitesh",
-            lastname: "choudhary"
+            firstname: "Sameer",
+            lastname: "Sayyed"
         }
     }
 }
@@ -23,10 +24,18 @@ const obj1 = {1: "a", 2: "b"}
 const obj2 = {3: "a", 4: "b"}
 const obj4 = {5: "a", 6: "b"}
 
-// const obj3 = { obj1, obj2 }
-// const obj3 = Object.assign({}, obj1, obj2, obj4)
+// const obj3 = { obj1, obj2 } // not recommended to use syntax like this to copy objects 
 
-const obj3 = {...obj1, ...obj2}
+// Object.assign() method works like some sort of spread operator with an extra "target" functionality :-
+
+// const obj3 = Object.assign({}, obj1, obj2, obj4)  // Object.assign(target,source) - we use empty object as a target 
+// const obj3 = Object.assign(obj1, obj2, obj4)  // if we declare some predefined object as a target object it will alter the real object
+// console.log(obj3); 
+// console.log(obj1); // as we can see here all values are copied from other given objects
+
+// spread operator - for copying objects into an object ( better approach ) :-
+
+const obj3 = {...obj1, ...obj2} 
 // console.log(obj3);
 
 
@@ -45,37 +54,38 @@ const users = [
     },
 ]
 
-users[1].email
+users[1].email  // accessing objects from an array 
 // console.log(tinderUser);
 
-// console.log(Object.keys(tinderUser));
-// console.log(Object.values(tinderUser));
-// console.log(Object.entries(tinderUser));
+
+
+// console.log(Object.keys(tinderUser));    // return value datatype is an array 
+// console.log(Object.values(tinderUser));  // return value datatype is an array 
+// console.log(Object.entries(tinderUser)); // return value datatype is an array 
 
 // console.log(tinderUser.hasOwnProperty('isLoggedIn'));
 
 
 const course = {
-    coursename: "js in hindi",
-    price: "999",
-    courseInstructor: "hitesh"
+    coursename: "javascript",
+    price: "free",
 }
 
-// course.courseInstructor
+// course.price
 
-const {courseInstructor: instructor} = course
+// const {price: fees} = course
 
-// console.log(courseInstructor);
-console.log(instructor);
+// console.log(price);
+// console.log(fees);
 
 // {
-//     "name": "hitesh",
-//     "coursename": "js in hindi",
+//     "name": "Sameer",
+//     "coursename": "javascript",       // this is a json 
 //     "price": "free"
 // }
 
-[
-    {},
-    {},
-    {}
-]
+// [
+//     {},
+//     {},
+//     {}
+// ]
